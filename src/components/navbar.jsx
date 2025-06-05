@@ -46,10 +46,7 @@ function Navbar() {
         <div className="navbar__left">
           <NavLink to="/" className="left-container">
             <div className="left-container__logo">
-              <img
-                src="/public/Image/background_removed_image_ryQNP8BvSu6YbNDZBfKXiA.png"
-                alt="logo"
-              />
+              <img src="/Logo.png" alt="logo" />
             </div>
             <div className="left-container__acad"> AcademyX</div>
           </NavLink>
