@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../../stylesheets/User.css";
 import "../../Stylesheets/enrolledcourses.css";
 import "../../Stylesheets/base.css";
 import axios from "axios";
