@@ -5,6 +5,8 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { useOptions } from "../../context/UserContext";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 export default function YourCourses() {
   const [ycourses, setYCourses] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,12 +16,9 @@ export default function YourCourses() {
     const fetchCourses = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(
-          "http://localhost:8080/api/v1/dashboards/educator",
-          {
-            withCredentials: true,
-          }
-        );
+        const res = await axios.get(`${baseURL}/dashboards/educator`, {
+          withCredentials: true,
+        });
 
         if (res.data && res.data.data) {
           setYCourses(res.data.data);

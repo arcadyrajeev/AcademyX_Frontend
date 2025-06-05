@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 import { Link, NavLink } from "react-router-dom";
+
+const baseURL = import.meta.env.VITE_API_URL;
+
 function SignUp() {
   let navigate = useNavigate();
   let [email, setemail] = useState("");
@@ -19,18 +22,15 @@ function SignUp() {
     if (!email || !password || !username) {
       setValidate("Please enter email and password");
     }
-    const response = await fetch(
-      "http://localhost:8080/api/v1/users/register",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          username,
-          email,
-          password,
-        }),
-      }
-    );
+    const response = await fetch(`${baseURL}/users/register`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username,
+        email,
+        password,
+      }),
+    });
     const jsonResponse = await response.json();
     console.log(jsonResponse);
     if (jsonResponse.success) {

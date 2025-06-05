@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 
 const CourseContext = createContext();
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 export const useCourse = () => useContext(CourseContext);
 
 export function CourseProvider({ children }) {
@@ -13,7 +15,7 @@ export function CourseProvider({ children }) {
   const [selectedLesson, setSelectedLesson] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/v1/courses/${id}`)
+    fetch(`${baseURL}/courses/${id}`)
       .then((res) => res.json())
       .then((coursedata) => {
         if (coursedata?.data) {

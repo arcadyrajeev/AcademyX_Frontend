@@ -3,6 +3,8 @@ import axios from "axios";
 import "../../Stylesheets/CreateCoursePage.css";
 import Navbar from "../navbar";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 const CreateCourse = () => {
   const [formData, setFormData] = useState({
     courseName: "",
@@ -55,7 +57,7 @@ const CreateCourse = () => {
       setMessage("");
 
       const response = await axios.post(
-        "http://localhost:8080/api/v1/courses/createCourse",
+        `${baseURL}/courses/createCourse`,
         data,
         {
           withCredentials: true, // ✅ Use cookies

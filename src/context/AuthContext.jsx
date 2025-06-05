@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext();
+const baseURL = import.meta.env.VITE_API_URL;
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
@@ -26,7 +27,7 @@ export const AuthProvider = ({ children }) => {
     const fetchUser = async () => {
       setIsLoading(true);
       try {
-        const res = await fetch("http://localhost:8080/api/v1/dashboards", {
+        const res = await fetch(`${baseURL}/dashboards`, {
           credentials: "include",
         });
         const userdata = await res.json();

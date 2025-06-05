@@ -3,6 +3,8 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { useOptions } from "../../context/UserContext";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 export default function Dashboard() {
   const { setSelectedOption } = useOptions();
   const [createdCourses, setCreatedCourses] = useState([]);
@@ -11,10 +13,9 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchCreatedCourses = async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:8080/api/v1/dashboards/educator",
-          { withCredentials: true }
-        );
+        const res = await axios.get(`${baseURL}/dashboards/educator`, {
+          withCredentials: true,
+        });
         if (res.data && Array.isArray(res.data.data)) {
           setCreatedCourses(res.data.data);
         }

@@ -5,6 +5,8 @@ import "../../Stylesheets/CreateCoursePage.css"; // reusing CreateLesson styles
 import Footer from "../footer";
 import Navbar from "../navbar";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 const UpdateLesson = () => {
   const { courseId, lessonId } = useParams();
   const [videoTitle, setVideoTitle] = useState("");
@@ -27,7 +29,7 @@ const UpdateLesson = () => {
     try {
       setUploading(true);
       const response = await axios.post(
-        `http://localhost:8080/api/v1/lessons/${courseId}/${lessonId}`,
+        `${baseURL}/lessons/${courseId}/${lessonId}`,
         formData,
         {
           headers: {

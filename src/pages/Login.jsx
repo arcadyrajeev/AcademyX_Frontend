@@ -4,6 +4,8 @@ import { useNavigate, NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import axios from "axios";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 axios.defaults.withCredentials = true;
 
 function Login() {
@@ -23,13 +25,10 @@ function Login() {
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:8080/api/v1/users/login",
-        {
-          email,
-          password,
-        }
-      );
+      const response = await axios.post(`${baseURL}/users/login`, {
+        email,
+        password,
+      });
 
       if (response.data.success) {
         login(response.data.user);

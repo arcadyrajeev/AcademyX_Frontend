@@ -6,6 +6,8 @@ import { useAuth } from "../context/AuthContext";
 import { useOptions } from "../context/UserContext";
 import { IoIosSearch } from "react-icons/io";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 function Navbar() {
   const navigate = useNavigate();
   const { isLoggedIn, logout, user } = useAuth();
@@ -33,7 +35,7 @@ function Navbar() {
   };
 
   const handleLogOut = async () => {
-    await axios.get("http://localhost:8080/api/v1/users/logout", {
+    await axios.get(`${baseURL}/users/logout`, {
       withCredentials: true,
     });
     logout();

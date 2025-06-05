@@ -5,6 +5,8 @@ import useUserData from "./UserData";
 import axios from "axios";
 import { LiaEditSolid } from "react-icons/lia";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 export default function ProfileContent() {
   const [pfp, setPfp] = useState(null);
   const [banner, setBanner] = useState(null);
@@ -43,16 +45,12 @@ export default function ProfileContent() {
         fullname,
       };
 
-      const res = await axios.put(
-        "http://localhost:8080/api/v1/users/updateProfile",
-        payload,
-        {
-          withCredentials: true,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const res = await axios.put(`${baseURL}/users/updateProfile`, payload, {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
       console.log("Upload successful:", res.data);
       window.location.reload();
@@ -117,7 +115,7 @@ export default function ProfileContent() {
       formData.append("profileImage", pfp);
 
       const res = await axios.post(
-        "http://localhost:8080/api/v1/users/updateProfileImage",
+        `${baseURL}/users/updateProfileImage`,
         formData,
         {
           withCredentials: true,
@@ -142,7 +140,7 @@ export default function ProfileContent() {
       formData.append("coverImage", banner);
 
       const res = await axios.post(
-        "http://localhost:8080/api/v1/users/updateCoverImage",
+        `${baseURL}/users/updateCoverImage`,
         formData,
         {
           withCredentials: true,

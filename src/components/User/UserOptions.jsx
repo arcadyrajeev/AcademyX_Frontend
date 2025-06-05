@@ -5,6 +5,8 @@ import { useOptions } from "../../context/UserContext";
 import axios from "axios";
 import { useAuth } from "../../context/AuthContext";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 export default function UserOptions() {
   const { selectedOption, setSelectedOption } = useOptions();
   const navigate = useNavigate();
@@ -15,7 +17,7 @@ export default function UserOptions() {
   };
 
   const handlelogOut = async (e) => {
-    await axios.get("http://localhost:8080/api/v1/users/logout", {
+    await axios.get(`${baseURL}/users/logout`, {
       withCredentials: true,
     });
 

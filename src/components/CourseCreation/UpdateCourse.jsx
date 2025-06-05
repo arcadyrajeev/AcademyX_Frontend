@@ -6,6 +6,8 @@ import { useForm } from "../../context/FormContext";
 import { useOptions } from "../../context/UserContext";
 import "../../Stylesheets/CreateCoursePage.css"; // Using same styling
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 axios.defaults.withCredentials = true;
 
 export default function UpdateCourse() {
@@ -41,9 +43,7 @@ export default function UpdateCourse() {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        const res = await axios.get(
-          `http://localhost:8080/api/v1/courses/${id}`
-        );
+        const res = await axios.get(`${baseURL}/courses/${id}`);
         setCourse(res.data.data);
         setCourseData(res.data.data);
         setPreview(res.data.data.thumbnail);
@@ -69,10 +69,9 @@ export default function UpdateCourse() {
     if (!isConfirmed) return;
 
     try {
-      await axios.delete(
-        `http://localhost:8080/api/v1/lessons/${id}/${lessonId}`,
-        { withCredentials: true }
-      );
+      await axios.delete(`${baseURL}/lessons/${id}/${lessonId}`, {
+        withCredentials: true,
+      });
       alert("Course updated!");
     } catch (error) {
       console.error("Update error:", error);
@@ -91,13 +90,9 @@ export default function UpdateCourse() {
     try {
       const formData = new FormData();
       formData.set("thumbnail", thumbnail);
-      await axios.post(
-        `http://localhost:8080/api/v1/courses/${id}/updateThumbnail`,
-        formData,
-        {
-          headers: { "Content-Type": "multipart/form-data" },
-        }
-      );
+      await axios.post(`${baseURL}/courses/${id}/updateThumbnail`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
       alert("Thumbnail updated!");
     } catch (error) {
       alert("Failed to update thumbnail.");
@@ -107,10 +102,7 @@ export default function UpdateCourse() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(
-        `http://localhost:8080/api/v1/courses/${id}/updateCourse`,
-        courseData
-      );
+      await axios.post(`${baseURL}/courses/${id}/updateCourse`, courseData);
       alert("Course updated!");
     } catch (err) {
       console.error("Update error:", err);

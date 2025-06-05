@@ -4,6 +4,8 @@ import { NavLink, useLocation } from "react-router-dom";
 import { useCategory } from "../../context/CategoryContext";
 import axios from "axios";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 export default function CourseCard() {
   const { category } = useCategory();
   const [courses, setCourses] = useState([]);
@@ -16,24 +18,16 @@ export default function CourseCard() {
       try {
         let response;
         if (category === "All Courses") {
-          response = await axios.get(
-            "http://localhost:8080/api/v1/courses/allCourses"
-          );
+          response = await axios.get(`${baseURL}/courses/allCourses`);
         } else if (category === "New Courses") {
-          response = await axios.get(
-            "http://localhost:8080/api/v1/courses/allCourses"
-          );
+          response = await axios.get(`${baseURL}/courses/allCourses`);
         } else if (category === "Free Courses") {
-          response = await axios.get(
-            "http://localhost:8080/api/v1/courses/allCourses"
-          );
+          response = await axios.get(`${baseURL}/courses/allCourses`);
         } else if (category === "Popular Courses") {
-          response = await axios.get(
-            "http://localhost:8080/api/v1/courses/allCourses"
-          );
+          response = await axios.get(`${baseURL}/courses/allCourses`);
         } else {
           response = await axios.get(
-            `http://localhost:8080/api/v1/courses/?category=${category}`
+            `${baseURL}/courses/?category=${category}`
           );
         }
         setCourses(response.data.data);

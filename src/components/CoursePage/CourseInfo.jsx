@@ -6,6 +6,8 @@ import axios from "axios";
 import { useOptions } from "../../context/UserContext";
 import { useAuth } from "../../context/AuthContext";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 export default function CourseInfo() {
   const { course } = useCourse();
   const { id } = useParams();
@@ -28,12 +30,9 @@ export default function CourseInfo() {
     }
 
     try {
-      const res = await axios.get(
-        `http://localhost:8080/api/v1/enrollments/${id}`,
-        {
-          withCredentials: true,
-        }
-      );
+      const res = await axios.get(`${baseURL}/enrollments/${id}`, {
+        withCredentials: true,
+      });
       alert(res.data.message);
       console.log(enrolledCourse);
       window.location.reload(); // Refresh to update enrollment status

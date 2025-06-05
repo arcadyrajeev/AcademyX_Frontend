@@ -5,6 +5,8 @@ import "../../Stylesheets/CreateCoursePage.css";
 import Navbar from "../navbar";
 import Footer from "../footer";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 const CreateLesson = () => {
   const { id } = useParams();
   const [lessonTitle, setLessonTitle] = useState("");
@@ -28,16 +30,12 @@ const CreateLesson = () => {
 
     try {
       setUploading(true);
-      const response = await axios.post(
-        `http://localhost:8080/api/v1/lessons/${id}`,
-        formData,
-        {
-          withCredentials: true,
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await axios.post(`${baseURL}/lessons/${id}`, formData, {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       setMessage(response.data.message || "Lesson created successfully!");
       setLessonTitle("");
       setVideoTitle("");

@@ -4,6 +4,8 @@ import axios from "axios";
 
 const OptionContext = createContext();
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 export const OptionProvider = ({ children }) => {
   const [option, setOption] = useState("My Profile");
   const [selectedOption, setSelectedOption] = useState("My Profile");
@@ -12,7 +14,7 @@ export const OptionProvider = ({ children }) => {
   useEffect(() => {
     const fetchEnrolledCourses = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/v1/dashboards", {
+        const res = await axios.get(`${baseURL}/dashboards`, {
           withCredentials: true,
         });
 

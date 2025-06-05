@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 export default function useUserData() {
   const { isLoggedIn } = useAuth();
   const [user, setUser] = useState(null);
@@ -10,7 +12,7 @@ export default function useUserData() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch("http://localhost:8080/api/v1/dashboards", {
+        const res = await fetch(`${baseURL}/dashboards`, {
           method: "GET",
           credentials: "include", // important if using cookies
         });
