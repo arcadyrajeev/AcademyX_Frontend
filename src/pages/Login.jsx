@@ -48,10 +48,7 @@ function Login() {
       <div className="left-login">
         <div className="left_logo">
           <NavLink to="/">
-            <img
-              src="/public/Image/background_removed_image_ryQNP8BvSu6YbNDZBfKXiA.png"
-              alt="Logo"
-            />
+            <img src="/Logo.png" alt="Logo" />
           </NavLink>
         </div>
         <div className="layout">
