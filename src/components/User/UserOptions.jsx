@@ -1,5 +1,5 @@
 import React from "react";
-import "../../stylesheets/User.css";
+import "../../Stylesheets/User.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useOptions } from "../../context/UserContext";
 import axios from "axios";

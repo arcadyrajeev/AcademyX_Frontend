@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../stylesheets/Courses.css";
+import "../../Stylesheets/Courses.css";
 import { NavLink, useLocation } from "react-router-dom";
 import { useCategory } from "../../context/CategoryContext";
 import axios from "axios";

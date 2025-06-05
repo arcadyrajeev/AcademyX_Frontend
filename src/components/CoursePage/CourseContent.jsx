@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"; // Capital "R"
 import { useCourse } from "../../context/CourseContext";
 import CourseInfo from "./CourseInfo";
 import VideoContainer from "./VideoContainer";
-import CourseTracker from "./coursetracker";
+import CourseTracker from "./CourseTracker";
 import CourseList from "./CourseList";
 
 function CourseContent() {

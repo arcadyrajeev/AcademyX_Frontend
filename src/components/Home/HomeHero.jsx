@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "../../stylesheets/Home.css";
+import "../../Stylesheets/Home.css";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../stylesheets/User.css";
+import "../../Stylesheets/User.css";
 import ProfileContent from "./ProfileContent";
 import Dashboard from "./Dashboard";
 import { useOptions } from "../../context/UserContext";
