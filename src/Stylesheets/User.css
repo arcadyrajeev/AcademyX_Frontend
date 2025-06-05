@@ -151,7 +151,7 @@
   width: 18vw;
   height: 100vh;
   border-radius: 0.5rem;
-  background-color: #201D21;
+  background-color: #201d21;
   float: left;
   color: #888;
   font-family: sans-serif;
@@ -183,7 +183,7 @@
 .sidebardiv .active-option {
   color: #fff;
   transform: translateX(0.5vw);
-  background-color: #0774AB;
+  background-color: #0774ab;
 }
 
 .main-content {
@@ -366,8 +366,8 @@
 }
 
 .button1 {
-  background-color: #00171F;
-  color: #201D21;
+  background-color: #00171f;
+  color: #201d21;
   display: flex;
   width: 60%;
   height: -moz-fit-content;
@@ -400,8 +400,8 @@
 }
 
 .button2 {
-  background-color: #0774AB;
-  color: #201D21;
+  background-color: #0774ab;
+  color: #201d21;
   display: flex;
   width: 10vw;
   height: 3vw;

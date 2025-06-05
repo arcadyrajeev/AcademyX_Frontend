@@ -223,13 +223,13 @@
   margin-inline: auto;
   height: 50vw;
   border-radius: 1rem;
-  background-color: #201D21;
+  background-color: #201d21;
   padding-top: 3vh;
   /*background-image:linear-gradient( to right,
         rgba(7, 116, 171, 1), 
         rgba(0, 0, 0, 0)
       ), url(/Image/homehero.jpg);*/
-  background-color: #201D21;
+  background-color: #201d21;
   background-size: cover;
   background-position: 90% 30%;
   position: relative;
@@ -270,7 +270,7 @@
   position: absolute;
   padding: 3% 5%;
   transform: translate(8vw, -3vw);
-  background-color: #FB8500;
+  background-color: #fb8500;
   border-radius: 1.5vw;
 }
 .hero .hero__title {
@@ -289,7 +289,7 @@
   float: left;
   width: 40%;
   height: 60%;
-  background-color: #0774AB;
+  background-color: #0774ab;
   overflow: hidden;
   padding: 0;
 }
@@ -307,7 +307,7 @@
 .signupbutton {
   width: 20vw;
   height: 5vw;
-  color: #201D21;
+  color: #201d21;
   background-color: #fff;
   border: none;
   border-radius: 4rem;
@@ -326,7 +326,7 @@
 }
 .signupbutton:hover {
   transform: scale(1.02);
-  box-shadow: 0 0.5vw 1.5vw #84DEFF;
+  box-shadow: 0 0.5vw 1.5vw #84deff;
 }
 .signupbutton__text {
   font-size: 1.8vw;
@@ -341,9 +341,9 @@
   margin-inline: auto;
   height: 50vw;
   border-radius: 1rem;
-  background-color: #201D21;
+  background-color: #201d21;
   padding-top: 3vh;
-  background-color: #0774AB;
+  background-color: #0774ab;
   margin-top: 2vw;
 }
 .Topcreator__title {
@@ -383,7 +383,7 @@
   cursor: pointer;
 }
 .cardset:hover {
-  box-shadow: 0 0.5vw 1vw #84DEFF;
+  box-shadow: 0 0.5vw 1vw #84deff;
 }
 .cardset__img {
   display: flex;

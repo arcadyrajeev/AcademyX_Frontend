@@ -218,7 +218,7 @@
   width: 18vw;
   min-height: 60vw;
   border-radius: 0.5rem;
-  background-color: #201D21;
+  background-color: #201d21;
   color: #ebebeb;
   float: left;
 }
@@ -227,11 +227,11 @@
 }
 .categories .active-li {
   font-size: clamp(0.8rem, 1.2vw, 1.2vw);
-  color: #FFB703;
+  color: #ffb703;
   transform: translateX(0.3vw);
 }
 .categories .active-li:hover {
-  color: #FFB703;
+  color: #ffb703;
 }
 .categories li {
   font-family: sans-serif;
@@ -335,7 +335,7 @@
   text-decoration: none;
   margin-top: 1vw;
   margin-left: 1vw;
-  color: #201D21;
+  color: #201d21;
   font-family: "Heading", sans-serif;
   font-size: clamp(0.8em, 1.2vw, 1.2vw);
 }
@@ -344,7 +344,7 @@
   text-decoration: none;
   margin-top: 1.6vw;
   margin-left: 1vw;
-  color: #201D21;
+  color: #201d21;
   font-family: "SubHeading1", sans-serif;
   font-size: clamp(0.6em, 1vw, 1.2vw);
 }
@@ -352,13 +352,13 @@
   text-decoration: none;
   margin-top: 3vw;
   margin-left: 1vw;
-  color: #201D21;
+  color: #201d21;
   font-family: "Content", sans-serif;
   font-size: clamp(0.5rem, 1vw, 1.2vw);
 }
 .videocard__buybutton {
-  background-color: #FFB703;
-  color: #201D21;
+  background-color: #ffb703;
+  color: #201d21;
   display: flex;
   width: 20vw;
   height: 5vw;
@@ -403,7 +403,7 @@
   opacity: 0;
 }
 .videocard__buybutton:hover {
-  background-color: #FB8500;
+  background-color: #fb8500;
 }
 .videocard__buybutton:hover .hover-text {
   display: block;

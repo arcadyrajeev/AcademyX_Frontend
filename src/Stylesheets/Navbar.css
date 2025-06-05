@@ -261,7 +261,7 @@
   margin-bottom: 0.5vw;
   padding: 0vw;
   text-decoration: none;
-  color: #201D21;
+  color: #201d21;
   height: 3.5vw;
   place-content: center center;
   border: none;
@@ -277,11 +277,11 @@
   display: none;
 }
 .navlink:hover {
-  color: #FB8500;
+  color: #fb8500;
   transform: translateY(-0.3vw);
 }
 .navlink.active {
-  color: #0774AB;
+  color: #0774ab;
   font-weight: bold;
 }
 .navlink.active:hover {
@@ -293,7 +293,7 @@
   opacity: 1;
   height: 0.2vw;
   width: 120%;
-  background-color: #0774AB;
+  background-color: #0774ab;
 }
 
 .left-container {
@@ -327,7 +327,7 @@
   font-family: "Heading", sans-serif;
   font-weight: 700;
   font-size: clamp(1rem, 2vw, 2vw);
-  color: #201D21;
+  color: #201d21;
   opacity: 0.7;
 }
 
@@ -351,24 +351,24 @@
   text-decoration: none;
 }
 .user-buttons__login {
-  background-color: #B9D4E2;
+  background-color: #b9d4e2;
   transition-property: all;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
   color: #1a1a1a;
 }
 .user-buttons__login:hover {
-  background-color: #84DEFF;
+  background-color: #84deff;
 }
 .user-buttons__signup {
-  background-color: #0774AB;
+  background-color: #0774ab;
   transition-property: all;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
   color: #fff;
 }
 .user-buttons__signup:hover {
-  background-color: #84DEFF;
+  background-color: #84deff;
   color: #1a1a1a;
 }
 
@@ -455,7 +455,7 @@
 }
 
 .pfpdrop {
-  background-color: #201D21;
+  background-color: #201d21;
   width: 15vw;
   display: flex;
   gap: 0.5rem;
@@ -478,7 +478,7 @@
   text-decoration: none;
 }
 .pfpdrop__content:hover {
-  background-color: #0774AB;
+  background-color: #0774ab;
 }
 .pfpdrop__content {
   width: 0%;
@@ -521,7 +521,7 @@
   opacity: 0;
   z-index: 1;
   transform: scaleX(0);
-  background-color: #84DEFF;
+  background-color: #84deff;
   transform-origin: left;
   transition: opacity 0.2s ease-in-out, transform 0.4s ease-in-out;
 }
@@ -541,7 +541,7 @@
     background: none;
     border: none;
     font-size: 24px;
-    color: #201D21;
+    color: #201d21;
     cursor: pointer;
   }
   .mobile-dropdown {
@@ -557,7 +557,7 @@
   }
   .mobile-dropdown a {
     text-decoration: none;
-    color: #201D21;
+    color: #201d21;
     padding: 10px 0;
   }
 }/*# sourceMappingURL=Navbar.css.map */
