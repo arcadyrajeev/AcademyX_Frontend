@@ -58,7 +58,7 @@ function HomeHero() {
         <NavLink
           to="/signup"
           className="signupbutton"
-          style={isLoggedIn && isLoggedIn ? { display: "none" } : {}}
+          style={isLoggedIn && isLoggedIn ? {} : {}}
         >
           <div className="signupbutton__text">Sign up for free</div>
         </NavLink>
