@@ -5,6 +5,8 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import { useOptions } from "../../context/UserContext";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 export default function EnrolledCourses() {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,7 +16,7 @@ export default function EnrolledCourses() {
     const fetchCourses = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("http://localhost:8080/api/v1/dashboards", {
+        const res = await axios.get(`${baseURL}/dashboards`, {
           withCredentials: true,
         });
 
@@ -37,12 +39,9 @@ export default function EnrolledCourses() {
 
   const handleEnroll = async (id) => {
     try {
-      const res = await axios.get(
-        `http://localhost:8080/api/v1/enrollments/${id}`,
-        {
-          withCredentials: true,
-        }
-      );
+      const res = await axios.get(`${baseURL}/enrollments/${id}`, {
+        withCredentials: true,
+      });
       alert(res.data.message);
 
       // ✅ Remove the course from UI state
