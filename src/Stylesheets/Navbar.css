@@ -277,7 +277,7 @@
   display: none;
 }
 .navlink:hover {
-  color: #0774ab;
+  color: #fb8500;
   transform: translateY(-0.3vw);
 }
 .navlink.active {
