@@ -30,7 +30,7 @@ export default function CoursesCategories() {
   };
 
   return (
-    <div className="categories hidden lg:flex flex-col w-[30vw] h-[80vh] rounded-lg">
+    <div className=" hidden lg:flex flex-col w-[30vw] h-[80vh] rounded-lg">
       <h2 className="headings">Courses</h2>
       <ul className="categories__list">
         <li
