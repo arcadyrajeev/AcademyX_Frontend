@@ -218,18 +218,17 @@
   background-color: #201d21;
   color: #ebebeb;
 }
-.categories__list {
-  list-style-type: none;
-}
-.categories .active-li {
+
+.active-li {
   font-size: clamp(0.8rem, 1.2vw, 1.2vw);
   color: #ffb703;
   transform: translateX(0.3vw);
 }
-.categories .active-li:hover {
+.active-li:hover {
   color: #ffb703;
 }
-.categories li {
+
+.listitems {
   font-family: sans-serif;
   font-size: clamp(0.6rem, 1vw, 1vw);
   text-decoration: none;
@@ -243,7 +242,7 @@
   cursor: pointer;
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
-.categories li:hover {
+.listitems:hover {
   transform: translateX(0.3vw);
   color: #fff;
 }

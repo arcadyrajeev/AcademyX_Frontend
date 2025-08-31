@@ -6,6 +6,13 @@ import "../../Stylesheets/Courses.css";
 export default function CoursesCategories() {
   const { setCategory, selectedCategory, setSelectedCategory } = useCategory();
 
+  const topcat = [
+    "All Courses",
+    "Free Courses",
+    "New Courses",
+    "Popular Courses",
+  ];
+
   const categories = [
     "Artificial Intelligence",
     "Web Development",
@@ -30,37 +37,22 @@ export default function CoursesCategories() {
   };
 
   return (
-    <div className=" bg-dark1 hidden lg:flex flex-col w-[30vw] h-[80vh] rounded-lg">
+    <div className="flex flex-col w-[20vw] bg-dark1   rounded-lg ">
       <h2 className="headings">Courses</h2>
-      <ul className="categories__list">
-        <li
-          className={selectedCategory === "All Courses" ? "active-li" : ""}
-          onClick={() => handleCategoryClick("All Courses")}
-        >
-          All Courses
-        </li>
-
-        <li
-          className={selectedCategory === "Free Courses" ? "active-li" : ""}
-          onClick={() => handleCategoryClick("Free Courses")}
-        >
-          Free Courses
-        </li>
-
-        <li
-          className={selectedCategory === "New Courses" ? "active-li" : ""}
-          onClick={() => handleCategoryClick("New Courses")}
-        >
-          New Courses
-        </li>
-
-        <li
-          className={selectedCategory === "Popular Courses" ? "active-li" : ""}
-          onClick={() => handleCategoryClick("Popular Courses")}
-        >
-          Popular Courses
-        </li>
-      </ul>
+      <div className="flex gap-5 border border-white itens-center flex-col ">
+        {topcat.map((item) => (
+          <p
+            className={
+              selectedCategory === item
+                ? "border-white border w-[70%] text-accent2 fontbody"
+                : "border-white border w-[70%] text-grey2 fontbody text-[0.8rem] hover:text-white hover:translate-x-5 transition-translate duration-300 ease-in-out cursor-pointer"
+            }
+            onClick={() => handleCategoryClick(item)}
+          >
+            {item}
+          </p>
+        ))}
+      </div>
       <h1
         className="headings"
         style={{
@@ -71,17 +63,21 @@ export default function CoursesCategories() {
       >
         Course Categories
       </h1>
-      <ul className="categories__list">
+      <div className="flex gap-5 border border-white itens-center flex-col ">
         {categories.map((category, idx) => (
-          <li
-            className={selectedCategory === category ? "active-li" : ""}
+          <p
+            className={
+              selectedCategory === category
+                ? "border-white border w-[70%] text-accent2 fontbody"
+                : "border-white border w-[70%] text-grey2 fontbody text-[0.8rem] hover:text-white hover:translate-x-5 transition-translate duration-300 ease-in-out cursor-pointer"
+            }
             key={idx}
             onClick={() => handleCategoryClick(category)}
           >
             {category}
-          </li>
+          </p>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

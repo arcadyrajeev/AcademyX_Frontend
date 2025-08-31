@@ -31,7 +31,7 @@
   --highlight: #84deff;
 }
 
-:root {
+@theme layer {
   --color-white: var(--white);
 
   --color-grey1: var(--grey1);
@@ -50,4 +50,27 @@
   --color-accent2-dark: var(--accent2-dark);
 
   --color-highlight: var(--highlight);
+}
+
+@font-face {
+  font-family: "Albert";
+  src: url("/fonts/AlbertSans.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto.ttf") format("truetype");
+}
+
+.fontheading {
+  font-family: "Albert", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fontbody {
+  font-family: "Inter", Verdana, Geneva, Tahoma, sans-serif;
 }
