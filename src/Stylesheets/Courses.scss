@@ -93,11 +93,7 @@
   @include videocard(24vw, clamp(20rem, 35vw, 35vw));
 
   &__buybutton {
-    @include normbutton(20vw, 5vw, $bgcolor: $accent2);
-    @include transition(background-color opacity);
-    display: flex;
-    margin-inline: auto;
-    align-items: center;
+    background-color: $accent2;
     color: $white;
 
     .hover-text {

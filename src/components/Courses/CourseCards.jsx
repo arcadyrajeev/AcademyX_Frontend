@@ -49,7 +49,7 @@ export default function CourseCard() {
               className="courses"
               key={course._id}
             >
-              <div className="videocard">
+              <div className="flex flex-col w-[20vw] h-[40vw] bg-white rounded-lg">
                 <div className="videocard__data">
                   <div className="videocard__data__thumbcontainer">
                     <img

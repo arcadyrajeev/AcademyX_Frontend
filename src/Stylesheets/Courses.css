@@ -354,24 +354,6 @@
 }
 .videocard__buybutton {
   background-color: #ffb703;
-  color: #201d21;
-  display: flex;
-  width: 20vw;
-  height: 5vw;
-  border-radius: 0.5rem;
-  padding-block: 1rem;
-  padding-inline: 1rem;
-  justify-content: center;
-  text-decoration: none;
-  font-family: sans-serif;
-  cursor: pointer;
-  font-weight: 800;
-  transition-property: background-color opacity;
-  transition-duration: 0.3s;
-  transition-timing-function: ease-in-out;
-  display: flex;
-  margin-inline: auto;
-  align-items: center;
   color: #fff;
 }
 .videocard__buybutton .hover-text {
