@@ -41,7 +41,7 @@ export default function CourseCard() {
 
   return (
     <div className="flex w-full h-full p-5">
-      <div className="grid grid-cols-2 h-full w-full">
+      <div className="grid grid-cols-3 h-full w-full">
         {courses.length > 0 ? (
           courses.map((course) => (
             <NavLink
@@ -49,7 +49,7 @@ export default function CourseCard() {
               className="courses"
               key={course._id}
             >
-              <div className="flex flex-col w-[20vw] h-[40vw] bg-white rounded-lg">
+              <div className="flex flex-col w-[20vw] h-[70vw] bg-white rounded-lg">
                 <div className="videocard__data">
                   <div className="videocard__data__thumbcontainer">
                     <img
