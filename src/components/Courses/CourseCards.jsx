@@ -41,7 +41,7 @@ export default function CourseCard() {
 
   return (
     <div className="videocard-container">
-      <div className="videocard-grid">
+      <div className="flex grid-cols-3 h-full w-full">
         {courses.length > 0 ? (
           courses.map((course) => (
             <NavLink
