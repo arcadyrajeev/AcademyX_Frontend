@@ -17,8 +17,8 @@
   --grey2: #888;
   --grey3: #444;
 
-  --bg-dark1: #201d21;
-  --bg-dark2: #00171f;
+  --dark1: #201d21;
+  --dark2: #00171f;
 
   --accent1: #0774ab;
   --accent1-light: #b9d4e2;
@@ -29,4 +29,25 @@
   --accent2-dark: #fb8500;
 
   --highlight: #84deff;
+}
+
+:root {
+  --color-white: var(--white);
+
+  --color-grey1: var(--grey1);
+  --color-grey2: var(--grey2);
+  --color-grey3: var(--grey3);
+
+  --color-dark1: var(--dark1);
+  --color-dark2: var(--dark2);
+
+  --color-accent1: var(--accent1);
+  --color-accent1-light: var(--accent1-light);
+  --color-accent1-dark: var(--accent1-dark);
+
+  --color-accent2: var(--accent2);
+  --color-accent2-light: var(--accent2-light);
+  --color-accent2-dark: var(--accent2-dark);
+
+  --color-highlight: var(--highlight);
 }
