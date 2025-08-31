@@ -15,8 +15,12 @@ function Courses() {
         <Navbar />
         <ErrorBoundary>
           <div className="flex flex-row w-full justify-between m-8">
-            <CoursesCategories />
-            <CourseCard />
+            <div className="flex w-[22vw] p-3">
+              <CoursesCategories />
+            </div>
+            <div className="flex w-[84vw] p-3 ">
+              <CourseCard />
+            </div>
           </div>
         </ErrorBoundary>
       </div>
