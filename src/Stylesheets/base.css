@@ -1,5 +1,32 @@
-.bodydiv{
-    display: block;
-    padding-inline: 1.5vw;
-    margin-bottom: 10vh;
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bodydiv {
+  display: block;
+  padding-inline: 1.5vw;
+  margin-bottom: 10vh;
+}
+
+:root {
+  --white: #fff;
+
+  --grey1: #ebebeb;
+  --grey2: #888;
+  --grey3: #444;
+
+  --bg-dark1: #201d21;
+  --bg-dark2: #00171f;
+
+  --accent1: #0774ab;
+  --accent1-light: #b9d4e2;
+  --accent1-dark: #023047;
+
+  --accent2: #ffb703;
+  --accent2-light: #ffdb65;
+  --accent2-dark: #fb8500;
+
+  --highlight: #84deff;
 }
