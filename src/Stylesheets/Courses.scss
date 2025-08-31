@@ -13,12 +13,8 @@
 }
 
 .categories {
-  width: 18vw;
-  min-height: 60vw;
-  border-radius: 0.5rem;
   background-color: $bg-dark1;
   color: $grey1;
-  float: left;
 
   &__list {
     list-style-type: none;

@@ -215,12 +215,8 @@
 }
 
 .categories {
-  width: 18vw;
-  min-height: 60vw;
-  border-radius: 0.5rem;
   background-color: #201d21;
   color: #ebebeb;
-  float: left;
 }
 .categories__list {
   list-style-type: none;
