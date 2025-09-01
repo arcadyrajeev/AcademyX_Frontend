@@ -40,47 +40,45 @@ export default function CourseCard() {
   }, [category]);
 
   return (
-    <div className="flex w-full h-full p-5">
-      <div className="grid grid-cols-3 h-full w-full m-15">
-        {courses.length > 0 ? (
-          courses.map((course) => (
-            <NavLink
-              to={`/coursepage/${course._id}`}
-              className="courses"
-              key={course._id}
-            >
-              <div className="flex flex-col w-[20vw] h-[36vw] border bg-white rounded-lg">
-                <div className="videocard__data">
-                  <div className="videocard__data__thumbcontainer">
-                    <img
-                      src={course.thumbnail}
-                      alt={course.courseName}
-                      className="videocard__data__thumb"
-                    />
-                  </div>
-
-                  <h3 className="videocard__data__title">
-                    {course.courseName}
-                    {console.log(course.category)}
-                  </h3>
-                  <p className="videocard__data__subtitle">{course.title}</p>
+    <div className="grid grid-cols-3 h-full w-full m-15">
+      {courses.length > 0 ? (
+        courses.map((course) => (
+          <NavLink
+            to={`/coursepage/${course._id}`}
+            className="courses"
+            key={course._id}
+          >
+            <div className="flex flex-col w-[20vw] h-[36vw] border bg-white rounded-lg">
+              <div className="videocard__data">
+                <div className="videocard__data__thumbcontainer">
+                  <img
+                    src={course.thumbnail}
+                    alt={course.courseName}
+                    className="videocard__data__thumb"
+                  />
                 </div>
-                <NavLink to="/buypage" className="videocard__buybutton">
-                  <div className="pricecontain">
-                    <span>BUY NOW</span>
-                    <span>
-                      {course.price === 0 ? "Free" : `₹ ${course.price}`}
-                    </span>
-                  </div>
-                  <div className="hover-text">GET IT {">"} </div>
-                </NavLink>
+
+                <h3 className="videocard__data__title">
+                  {course.courseName}
+                  {console.log(course.category)}
+                </h3>
+                <p className="videocard__data__subtitle">{course.title}</p>
               </div>
-            </NavLink>
-          ))
-        ) : (
-          <p>No Courses in this Category</p>
-        )}
-      </div>
+              <NavLink to="/buypage" className="videocard__buybutton">
+                <div className="pricecontain">
+                  <span>BUY NOW</span>
+                  <span>
+                    {course.price === 0 ? "Free" : `₹ ${course.price}`}
+                  </span>
+                </div>
+                <div className="hover-text">GET IT {">"} </div>
+              </NavLink>
+            </div>
+          </NavLink>
+        ))
+      ) : (
+        <p>No Courses in this Category</p>
+      )}
     </div>
   );
 }
