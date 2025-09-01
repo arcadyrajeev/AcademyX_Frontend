@@ -24,10 +24,12 @@ export default function TopCreators() {
   }, []);
   return (
     <>
-      <div className="Topcreator">
-        <h1 className="Topcreator__subtitle">Our Top Creators</h1>
+      <div className="flex flex-col p-6 lg:p-10 gap-5 w-full items-center rounded-3xl bg-accent1">
+        <h1 className="fontheading text-[2rem] lg:text-[4rem] text-white py-2">
+          Our Top Creators
+        </h1>
 
-        <div className="cards-grid">
+        <div className="grid grid-cols-1 md:grid-cols-3  gap-5 lg:gap-10 rounded-lg">
           {card.length > 0 ? (
             card.map((value, idx) => (
               <NameCard
@@ -49,17 +51,24 @@ export default function TopCreators() {
 function NameCard({ image, tittle, course }) {
   return (
     <>
-      <div className="card_container">
-        <div className="cardset">
-          <img src={image} alt={tittle} className="cardset__img" />
-          <div className="data">
-            <h3 className="cardset__title">{tittle}</h3>
-            <p className="cardset__subtitle">{course}</p>
-            <p className="cardset__description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
-              quidem{" "}
-            </p>
-          </div>
+      <div className="flex w-full lg:w-[26vw] flex-col h-[24rem] xl:h-[40vw] p-8 bg-dark1 rounded-3xl items-center">
+        <div className="flex w-full h-[54%] rounded-xl overflow-hidden">
+          <img
+            src={image}
+            alt={tittle}
+            className="object-contain w-[100%] h-[100%] object-center"
+          />
+        </div>
+        <div className="flex flex-col gap-2">
+          <h3 className="font-heading font-bold text-[1rem] lg:text-[2rem] text-white">
+            {tittle}
+          </h3>
+          <p className="font-heading font-bold text-[0.8rem] lg:text-[1rem] text-white/60">
+            {course}
+          </p>
+          <p className="fontbody text-[0.7rem] text-justify lg:text-[0.84rem] text-grey2 mt-2 lg:mt-5">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quidem{" "}
+          </p>
         </div>
       </div>
     </>

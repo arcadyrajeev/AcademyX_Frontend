@@ -37,15 +37,15 @@ export default function CoursesCategories() {
   };
 
   return (
-    <div className="flex flex-col w-[20vw] bg-dark1   rounded-lg ">
+    <div className="flex flex-col w-[20vw] bg-dark1 rounded-lg ">
       <h2 className="headings">Courses</h2>
       <div className="flex gap-5 border border-white itens-center flex-col ">
         {topcat.map((item) => (
           <p
             className={
               selectedCategory === item
-                ? "border-white border w-[70%] text-accent2 fontbody"
-                : "border-white border w-[70%] text-grey2 fontbody text-[0.8rem] hover:text-white hover:translate-x-5 transition-translate duration-300 ease-in-out cursor-pointer"
+                ? "flex border-white border w-[70%] text-accent2 fontbody"
+                : "flex border-white border w-[70%] text-grey2 fontbody text-[0.8rem] hover:text-white hover:translate-x-5 transition-translate duration-300 pl-10 ease-in-out cursor-pointer"
             }
             onClick={() => handleCategoryClick(item)}
           >

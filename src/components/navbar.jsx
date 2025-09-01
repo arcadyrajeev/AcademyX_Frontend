@@ -8,6 +8,25 @@ import { IoIosSearch } from "react-icons/io";
 
 const baseURL = import.meta.env.VITE_API_URL;
 
+const navlinks = [
+  {
+    label: "Home",
+    link: "/",
+  },
+  {
+    label: "Courses",
+    link: "/courses",
+  },
+  {
+    label: "My Library",
+    link: "/user",
+  },
+  {
+    label: "Communinty",
+    link: "/",
+  },
+];
+
 function Navbar() {
   const navigate = useNavigate();
   const { isLoggedIn, logout, user } = useAuth();
@@ -44,69 +63,34 @@ function Navbar() {
 
   return (
     <>
-      <div className="navbar">
-        <div className="navbar__left">
-          <NavLink to="/" className="left-container">
-            <div className="left-container__logo">
-              <img src="/Logo.png" alt="logo" />
-            </div>
-            <div className="left-container__acad"> AcademyX</div>
-          </NavLink>
-        </div>
+      <div className="flex border justify-between w-[100vw] h-[4rem]">
+        <NavLink to="/" className="flex border w-[15vw] h-full">
+          <div className="flex border w-[2rem] overflow-hidden ">
+            <img
+              src="/Logo.png"
+              className="object-cover object-center w-full h-full"
+              alt="logo"
+            />
+          </div>
+          <div className="fontheading font-bold text-[1.4rem] text-dark2">
+            {" "}
+            AcademyX
+          </div>
+        </NavLink>
 
-        <div className="navbar__center">
-          <ul className="ullist">
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "navlink active" : "navlink"
-                }
-                to="/"
-              >
-                Home
-                <div className="underline"></div>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "navlink active" : "navlink"
-                }
-                to="/courses"
-              >
-                Courses
-                <div className="underline"></div>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "navlink active" : "navlink"
-                }
-                to="/user"
-                onClick={() => {
-                  !isLoggedIn
-                    ? navigate("/nolibrary")
-                    : handleClick("My Library");
-                }}
-              >
-                My Library
-                <div className="underline"></div>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "navlink active" : "navlink"
-                }
-                id="indevelopment"
-                to="/community"
-              >
-                Community
-                <div className="underline"></div>
-              </NavLink>
-            </li>
-          </ul>
+        <div className="flex w-[50%] gap-5 h-full">
+          {navlinks.map((option, id) => (
+            <NavLink
+              key={id}
+              className={({ isActive }) =>
+                isActive ? "" : "fontbody text-grey2 text-[1rem] "
+              }
+              to={option.link}
+            >
+              {option.label}
+              <div className="underline"></div>
+            </NavLink>
+          ))}
         </div>
 
         <div className="navbar__right">

@@ -8,8 +8,8 @@ import "../Stylesheets/base.css";
 function Home() {
   return (
     <div>
-      <div className="bodydiv">
-        <Navbar />
+      <Navbar />
+      <div className="flex flex-col items-center p-2 lg:p-5 gap-6 lg:gap-10">
         <HomeHero />
         <TopCreators />
       </div>
