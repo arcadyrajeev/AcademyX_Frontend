@@ -14,7 +14,7 @@ function Courses() {
       <div className="bodydiv">
         <Navbar />
         <ErrorBoundary>
-          <div className="flex flex-row w-full justify-between m-8">
+          <div className="flex flex-row gap-10 w-full justify-between m-8">
             <div className="flex w-[22vw] p-3">
               <CoursesCategories />
             </div>
