@@ -25,6 +25,10 @@ body,
   --accent2-dark: #fb8500;
 
   --highlight: #84deff;
+
+  --fluid-h1: clamp(2rem, 1rem + 5vw, 4.4rem);
+  --fluid-h2: clamp(1.2rem, 0.75rem + 2vw, 1.8rem);
+  --fluid-p: clamp(0.7rem, 0.6rem + 1.2vw, 1rem);
 }
 
 @theme layer {
@@ -46,6 +50,10 @@ body,
   --color-accent2-dark: var(--accent2-dark);
 
   --color-highlight: var(--highlight);
+
+  --font-fluid-h1: var(--fluid-h1);
+  --font-fluid-h2: var(--fluid-h2);
+  --font-fluid-p: var(--fluid-p);
 }
 
 @font-face {

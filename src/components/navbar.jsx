@@ -4,7 +4,6 @@ import "../Stylesheets/Navbar.css";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import { useOptions } from "../context/UserContext";
-import { IoIosSearch } from "react-icons/io";
 
 const baseURL = import.meta.env.VITE_API_URL;
 
@@ -22,8 +21,8 @@ const navlinks = [
     link: "/user",
   },
   {
-    label: "Communinty",
-    link: "/",
+    label: "Community",
+    link: "/comunity",
   },
 ];
 
@@ -63,27 +62,25 @@ function Navbar() {
 
   return (
     <>
-      <div className="flex border justify-between w-[100vw] h-[4rem]">
-        <NavLink to="/" className="flex border w-[15vw] h-full">
-          <div className="flex border w-[2rem] overflow-hidden ">
+      <div className="flex border-2 border-gray-300 justify-between items-center w-full h-[4rem] px-5 p-3">
+        <NavLink to="/" className="flex   h-full">
+          <div className="flex overflow-hidden ">
             <img
-              src="/Logo.png"
-              className="object-cover object-center w-full h-full"
+              src="/logo.png"
+              className="object-cover object-center w-[100%] h-[100%]"
               alt="logo"
             />
           </div>
-          <div className="fontheading font-bold text-[1.4rem] text-dark2">
-            {" "}
-            AcademyX
-          </div>
         </NavLink>
 
-        <div className="flex w-[50%] gap-5 h-full">
+        <div className="hidden lg:flex w-[50%] justify-center  gap-10 h-full items-center">
           {navlinks.map((option, id) => (
             <NavLink
               key={id}
               className={({ isActive }) =>
-                isActive ? "" : "fontbody text-grey2 text-[1rem] "
+                isActive
+                  ? "fontboby text-[1.2rem] text-accent1 font-bold"
+                  : "fontbody text-grey3 text-[1rem] hover:-translate-y-1 hover:text-accent2-dark transition-all duration-300 ease-in-out"
               }
               to={option.link}
             >
@@ -93,26 +90,19 @@ function Navbar() {
           ))}
         </div>
 
-        <div className="navbar__right">
-          <div className="search-bar" style={{ display: "none" }}>
-            <IoIosSearch size={24} />
-            <input
-              type="text"
-              value={courseText}
-              onChange={(e) => setCourseText(e.target.value)}
-              placeholder=" Search for courses"
-            />
-            <button onClick={handleSearch} className="search-bar__button">
-              Search
-            </button>
-          </div>
-
+        <div className="flex h-full  ">
           {!isLoggedIn ? (
-            <div className="user-buttons">
-              <NavLink className="user-buttons__login" to="/login">
+            <div className="flex gap-2 h-full ">
+              <NavLink
+                className="flex w-24 h-full fontbody font-medium items-center justify-center rounded-md bg-accent1-light hover:bg-highlight duration-300 ease-in-out"
+                to="/login"
+              >
                 Log in
               </NavLink>
-              <NavLink className="user-buttons__signup" to="/signup">
+              <NavLink
+                className="hidden md:flex w-24 h-full fontbody font-medium items-center justify-center rounded-md bg-accent1/70 hover:bg-highlight duration-300 ease-in-out"
+                to="/signup"
+              >
                 Sign up
               </NavLink>
             </div>
@@ -134,7 +124,7 @@ function Navbar() {
               </div>
 
               {isOpen && (
-                <div className="pfpdrop-container">
+                <div className="pfpdrop-container flex lg:hidden">
                   <div className="pfpdrop">
                     <div
                       className="pfpdrop__content"

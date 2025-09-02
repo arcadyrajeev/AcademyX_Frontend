@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import "../../Stylesheets/Home.css";
 export default function TopCreators() {
   let [card, setCard] = useState([]);
@@ -51,7 +52,7 @@ export default function TopCreators() {
 function NameCard({ image, tittle, course }) {
   return (
     <>
-      <div className="flex w-full lg:w-[26vw] flex-col h-[24rem] xl:h-[40vw] p-8 bg-dark1 rounded-3xl items-center">
+      <div className="flex w-full lg:w-[26vw] flex-col h-fit p-8 bg-dark1 rounded-3xl items-center">
         <div className="flex w-full h-[54%] rounded-xl overflow-hidden">
           <img
             src={image}
@@ -59,8 +60,8 @@ function NameCard({ image, tittle, course }) {
             className="object-contain w-[100%] h-[100%] object-center"
           />
         </div>
-        <div className="flex flex-col gap-2">
-          <h3 className="font-heading font-bold text-[1rem] lg:text-[2rem] text-white">
+        <div className="flex flex-col gap-2 mt-10">
+          <h3 className="font-heading font-bold text-[6.8vw] md:text-[2.4vw] lg:text-[2vw] text-white">
             {tittle}
           </h3>
           <p className="font-heading font-bold text-[0.8rem] lg:text-[1rem] text-white/60">
@@ -70,6 +71,12 @@ function NameCard({ image, tittle, course }) {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quidem{" "}
           </p>
         </div>
+        <NavLink
+          to={"/"}
+          className="mt-10 text-accent1 underline hover:translate-x-2 hover:text-accent2 transition-[color, transform] duration-300 ease-in-out"
+        >
+          View Courses &gt;
+        </NavLink>
       </div>
     </>
   );
