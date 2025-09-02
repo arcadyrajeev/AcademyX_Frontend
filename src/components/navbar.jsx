@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
-import "../Stylesheets/Navbar.css";
 import axios from "axios";
 import { useAuth } from "../context/AuthContext";
 import { useOptions } from "../context/UserContext";
@@ -80,12 +79,11 @@ function Navbar() {
               className={({ isActive }) =>
                 isActive
                   ? "fontboby text-[1.2rem] text-accent1 font-bold"
-                  : "fontbody text-grey3 text-[1rem] hover:-translate-y-1 hover:text-accent2-dark transition-all duration-300 ease-in-out"
+                  : "group fontbody text-grey3 text-[1rem] hover:-translate-y-1 hover:text-accent2-dark transition-all duration-300 ease-in-out"
               }
               to={option.link}
             >
               {option.label}
-              <div className="underline"></div>
             </NavLink>
           ))}
         </div>
@@ -108,7 +106,7 @@ function Navbar() {
             </div>
           ) : (
             <div
-              className="flex w-15 h-full p-2 items-center rounded-[100vw]"
+              className="relative flex w-18 cursor-pointer h-15 justify-end h-full p-2 items-center rounded-[100vw]"
               onMouseEnter={() => setIsOpen(true)}
               onMouseLeave={() => setIsOpen(false)}
             >
@@ -132,41 +130,51 @@ function Navbar() {
               </div>
 
               {isOpen && (
-                <div className="pfpdrop-container">
-                  <div className="pfpdrop">
+                <div
+                  className="absolute z-90 flex items-center justify-center top-[100%] right-[-20%]"
+                  onMouseEnter={() => setIsOpen(true)}
+                  onMouseLeave={() => setIsOpen(false)}
+                >
+                  <div className="relative z-90 gap-5 flex-col flex  p-2 px-4 bg-dark2 items-center justify-center ">
                     <div
-                      className="pfpdrop__content"
+                      className="drop-content"
                       onClick={() => handleClick("My Profile", true)}
                     >
                       My Profile
                     </div>
                     <div
-                      className="pfpdrop__content"
+                      className="drop-content"
                       onClick={() => handleClick("My Library", true)}
                     >
                       My Library
                     </div>
                     <div
-                      className="pfpdrop__content"
+                      className="drop-content"
                       onClick={() => handleClick("Dashboard", true)}
                     >
                       Creator mode
                     </div>
                     <div
-                      className="pfpdrop__content"
+                      className="drop-content"
                       onClick={() => handleClick("Settings", true)}
                     >
                       Settings
                     </div>
-                    <div onClick={handleLogOut} className="logout">
-                      <div onClick={handleLogOut} className="box">
-                        Log out
-                      </div>
+                    <div
+                      onClick={handleLogOut}
+                      className="flex group relative overflow-hidden w-full h-8  bg-accent1 rounded-[50vw]  "
+                    >
+                      {" "}
                       <div
                         onClick={handleLogOut}
-                        className="box"
-                        id="top"
+                        className="absolute  opacity-0 group-hover:opacity-[1] scale-x-1 origin-left  group-hover:scale-[1] flex w-full h-full bg-highlight rounded-[50vw] duration-300 ease-in-out"
                       ></div>
+                      <div
+                        onClick={handleLogOut}
+                        className="absolute flex w-full h-full items-center justify-center rounded-[50vw]"
+                      >
+                        Log out
+                      </div>
                     </div>
                   </div>
                 </div>
