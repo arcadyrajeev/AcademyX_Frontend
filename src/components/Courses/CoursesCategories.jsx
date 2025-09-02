@@ -37,15 +37,17 @@ export default function CoursesCategories() {
   };
 
   return (
-    <div className="flex flex-col w-[20vw] bg-dark1 rounded-lg ">
-      <h2 className="headings">Courses</h2>
-      <div className="flex gap-5 border border-white itens-center flex-col ">
+    <div className="flex flex-col w-[20vw] bg-dark1 rounded-lg  p-5">
+      <h2 className="fontheading text-[0.8rem] text-grey2/60 font-bold">
+        COURSES
+      </h2>
+      <div className="flex gap-5 py-6 itens-center flex-col ">
         {topcat.map((item) => (
           <p
             className={
               selectedCategory === item
-                ? "flex border-white border w-[70%] text-accent2 fontbody"
-                : "flex border-white border w-[70%] text-grey2 fontbody text-[0.8rem] hover:text-white hover:translate-x-5 transition-translate duration-300 pl-10 ease-in-out cursor-pointer"
+                ? "flex  w-[70%] text-accent2 fontbody translate-x-4"
+                : "flex  w-[70%] text-grey2 fontbody text-[0.8rem] hover:text-white hover:translate-x-2 transition-translate duration-300  ease-in-out cursor-pointer"
             }
             onClick={() => handleCategoryClick(item)}
           >
@@ -53,23 +55,16 @@ export default function CoursesCategories() {
           </p>
         ))}
       </div>
-      <h1
-        className="headings"
-        style={{
-          fontSize: "clamp(0.6rem, 1vw, 1.5vw)",
-          marginLeft: "2vw",
-          marginTop: "clamp(1rem, 3vw, 3vw)",
-        }}
-      >
-        Course Categories
+      <h1 className="fontheading text-[0.8rem] py-3 text-grey2/60 font-bold">
+        COURSE CATEGORIES
       </h1>
-      <div className="flex gap-5 border border-white itens-center flex-col ">
+      <div className="flex gap-5 py-6 itens-center flex-col ">
         {categories.map((category, idx) => (
           <p
             className={
               selectedCategory === category
-                ? "border-white border w-[70%] text-accent2 fontbody"
-                : "border-white border w-[70%] text-grey2 fontbody text-[0.8rem] hover:text-white hover:translate-x-5 transition-translate duration-300 ease-in-out cursor-pointer"
+                ? "flex  w-[70%] text-accent2 fontbody translate-x-4"
+                : "flex  w-[70%] text-grey2 fontbody text-[0.8rem] hover:text-white hover:translate-x-2 transition-translate duration-300  ease-in-out cursor-pointer"
             }
             key={idx}
             onClick={() => handleCategoryClick(category)}

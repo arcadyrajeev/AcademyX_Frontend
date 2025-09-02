@@ -40,7 +40,7 @@ export default function CourseCard() {
   }, [category]);
 
   return (
-    <div className="grid grid-cols-3 h-full w-full m-15">
+    <div className="grid grid-cols-3 min-h-screen w-full  rounded-lg">
       {courses.length > 0 ? (
         courses.map((course) => (
           <NavLink

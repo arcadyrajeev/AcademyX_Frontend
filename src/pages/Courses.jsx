@@ -11,19 +11,17 @@ import { CategoryProvider } from "../context/CategoryContext";
 function Courses() {
   return (
     <div>
-      <div className="bodydiv">
-        <Navbar />
-        <ErrorBoundary>
-          <div className="flex flex-row gap-10 w-full justify-between m-8">
-            <div className="flex w-[22vw] p-5 !important ">
-              <CoursesCategories />
-            </div>
-            <div className="flex w-[84vw] p-5 ">
-              <CourseCard />
-            </div>
+      <Navbar />
+      <ErrorBoundary>
+        <div className="flex w-full  p-2 lg:p-3 gap-4 lg:gap-8">
+          <div className="hidden md:flex w-[20%] min-h-screen">
+            <CoursesCategories />
           </div>
-        </ErrorBoundary>
-      </div>
+          <div className="flex w-[80%] min-h-screen">
+            <CourseCard />
+          </div>
+        </div>
+      </ErrorBoundary>
       <Footer />
     </div>
   );
