@@ -44,7 +44,7 @@ export default function CourseCard() {
           <NavLink
             to={`/coursepage/${course._id}`}
             key={course._id}
-            className="group"
+            className="group transition duration-300 ease-in-out"
           >
             <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg hover:-translate-y-1 transition">
               {/* Thumbnail */}
