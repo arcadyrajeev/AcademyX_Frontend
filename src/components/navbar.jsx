@@ -132,7 +132,7 @@ function Navbar() {
               </div>
 
               {isOpen && (
-                <div className="pfpdrop-container flex lg:hidden">
+                <div className="pfpdrop-container">
                   <div className="pfpdrop">
                     <div
                       className="pfpdrop__content"
