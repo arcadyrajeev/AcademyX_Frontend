@@ -50,7 +50,7 @@ export default function EnrolledCourses() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 px-4 py-8">
+    <div className="min-h-screen bg-gray-50 px-8 py-12 rounded-lg">
       <h2 className="text-2xl font-bold mb-6 text-gray-800">
         Your Enrolled Courses
       </h2>

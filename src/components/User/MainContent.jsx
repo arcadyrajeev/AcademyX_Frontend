@@ -36,5 +36,5 @@ export default function MainContent() {
     }
   };
 
-  return <div className="main-content">{renderContent()}</div>;
+  return <div className="flex p-2 m-h-screen">{renderContent()}</div>;
 }
