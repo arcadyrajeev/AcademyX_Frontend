@@ -38,7 +38,7 @@ export default function CourseCard() {
   }, [category]);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 w-full">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 w-full">
       {courses.length > 0 ? (
         courses.map((course) => (
           <NavLink
@@ -58,10 +58,10 @@ export default function CourseCard() {
 
               {/* Content */}
               <div className="flex flex-col flex-grow p-4">
-                <h3 className="text-lg font-semibold text-gray-800 truncate">
+                <h3 className="text-lg mb-2 font-semibold text-gray-800 truncate">
                   {course.courseName}
                 </h3>
-                <p className="text-sm text-gray-500 line-clamp-2 mb-4">
+                <p className="text-sm text-gray-500 line-clamp-2 h-30">
                   {course.title}
                 </p>
 
