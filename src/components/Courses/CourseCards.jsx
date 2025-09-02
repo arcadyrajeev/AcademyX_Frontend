@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../../Stylesheets/Courses.css";
 import { NavLink, useLocation } from "react-router-dom";
 import { useCategory } from "../../context/CategoryContext";
 import axios from "axios";
@@ -17,13 +16,12 @@ export default function CourseCard() {
     const fetchCourses = async () => {
       try {
         let response;
-        if (category === "All Courses") {
-          response = await axios.get(`${baseURL}/courses/allCourses`);
-        } else if (category === "New Courses") {
-          response = await axios.get(`${baseURL}/courses/allCourses`);
-        } else if (category === "Free Courses") {
-          response = await axios.get(`${baseURL}/courses/allCourses`);
-        } else if (category === "Popular Courses") {
+        if (
+          category === "All Courses" ||
+          category === "New Courses" ||
+          category === "Free Courses" ||
+          category === "Popular Courses"
+        ) {
           response = await axios.get(`${baseURL}/courses/allCourses`);
         } else {
           response = await axios.get(
@@ -40,44 +38,51 @@ export default function CourseCard() {
   }, [category]);
 
   return (
-    <div className="grid grid-cols-3 min-h-screen w-full  rounded-lg">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4 w-full">
       {courses.length > 0 ? (
         courses.map((course) => (
           <NavLink
             to={`/coursepage/${course._id}`}
-            className="courses"
             key={course._id}
+            className="group"
           >
-            <div className="flex flex-col w-[20vw] h-[36vw] border bg-white rounded-lg">
-              <div className="videocard__data">
-                <div className="videocard__data__thumbcontainer">
-                  <img
-                    src={course.thumbnail}
-                    alt={course.courseName}
-                    className="videocard__data__thumb"
-                  />
-                </div>
-
-                <h3 className="videocard__data__title">
-                  {course.courseName}
-                  {console.log(course.category)}
-                </h3>
-                <p className="videocard__data__subtitle">{course.title}</p>
+            <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg hover:-translate-y-1 transition">
+              {/* Thumbnail */}
+              <div className="aspect-video w-full overflow-hidden">
+                <img
+                  src={course.thumbnail}
+                  alt={course.courseName}
+                  className="h-full w-full object-cover group-hover:scale-105 transition"
+                />
               </div>
-              <NavLink to="/buypage" className="videocard__buybutton">
-                <div className="pricecontain">
+
+              {/* Content */}
+              <div className="flex flex-col flex-grow p-4">
+                <h3 className="text-lg font-semibold text-gray-800 truncate">
+                  {course.courseName}
+                </h3>
+                <p className="text-sm text-gray-500 line-clamp-2 mb-4">
+                  {course.title}
+                </p>
+
+                {/* Buy Button */}
+                <NavLink
+                  to="/buypage"
+                  className="mt-auto bg-accent2-dark text-white text-sm font-medium px-4 py-2 rounded-lg flex items-center justify-between hover:bg-accent2 transition"
+                >
                   <span>BUY NOW</span>
                   <span>
                     {course.price === 0 ? "Free" : `₹ ${course.price}`}
                   </span>
-                </div>
-                <div className="hover-text">GET IT {">"} </div>
-              </NavLink>
+                </NavLink>
+              </div>
             </div>
           </NavLink>
         ))
       ) : (
-        <p>No Courses in this Category</p>
+        <p className="col-span-full text-center text-gray-600">
+          No Courses in this Category
+        </p>
       )}
     </div>
   );
