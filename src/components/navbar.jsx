@@ -108,7 +108,7 @@ function Navbar() {
             </div>
           ) : (
             <div
-              className="flex w-10 h-full items-center rounded-[100vw]"
+              className="flex w-15 h-full p-2 items-center rounded-[100vw]"
               onMouseEnter={() => setIsOpen(true)}
               onMouseLeave={() => setIsOpen(false)}
             >
