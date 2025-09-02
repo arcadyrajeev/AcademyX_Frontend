@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Navbar from "../navbar";
 
 const baseURL = import.meta.env.VITE_API_URL;
 
@@ -76,8 +75,6 @@ const CreateCourse = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 px-4 py-8">
-      <Navbar />
-
       <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-2xl p-8">
         <h1 className="text-3xl font-bold mb-6 text-gray-800">
           Create a New Course
