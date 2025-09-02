@@ -62,18 +62,18 @@ function Navbar() {
 
   return (
     <>
-      <div className="flex border-2 border-gray-300 justify-between items-center w-full h-[4rem] px-5 p-3">
+      <div className="flex border-2 border-gray-300 justify-between items-center w-full h-[4rem] px-8">
         <NavLink to="/" className="flex   h-full">
           <div className="flex overflow-hidden ">
             <img
               src="/acadxlogo.png"
-              className="object-cover object-center w-[100%] h-[100%]"
+              className="object-cover object-center w-[100%] h-[100%] hover:translate-x-3 transition-transform duration-300 ease-in-out"
               alt="logo"
             />
           </div>
         </NavLink>
 
-        <div className="hidden lg:flex w-[50%] justify-center  gap-10 h-full items-center">
+        <div className="hidden lg:flex w-[50%] justify-center p-3  gap-10 h-full items-center">
           {navlinks.map((option, id) => (
             <NavLink
               key={id}
@@ -113,7 +113,7 @@ function Navbar() {
               onMouseLeave={() => setIsOpen(false)}
             >
               <div
-                className="pfp-icon"
+                className="object-cover object-center w-[100%] h-[100%]"
                 onClick={() => handleClick("My Profile")}
               >
                 {user?.profileImage ? (
