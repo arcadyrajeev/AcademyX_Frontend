@@ -64,7 +64,7 @@ function Navbar() {
     <>
       <div className="flex border-2 border-gray-300 justify-between items-center w-full h-[4rem] px-8">
         <NavLink to="/" className="flex   h-full">
-          <div className="flex overflow-hidden ">
+          <div className="flex overflow-hidden p-3 ">
             <img
               src="/acadxlogo.png"
               className="object-cover object-center w-[100%] h-[100%] hover:translate-x-3 transition-transform duration-300 ease-in-out"
@@ -108,18 +108,26 @@ function Navbar() {
             </div>
           ) : (
             <div
-              className="flex w-10 h-full rounded-[100vw]"
+              className="flex w-10 h-full items-center rounded-[100vw]"
               onMouseEnter={() => setIsOpen(true)}
               onMouseLeave={() => setIsOpen(false)}
             >
               <div
-                className="object-cover object-center w-[100%] h-[100%]"
+                className="flex w-10 h-full items-center rounded-[100vw] overflow-hidden"
                 onClick={() => handleClick("My Profile")}
               >
                 {user?.profileImage ? (
-                  <img src={user.profileImage} alt="profile image" />
+                  <img
+                    src={user.profileImage}
+                    alt="profile image"
+                    className="object-cover object-center w-[100%] h-[100%]"
+                  />
                 ) : (
-                  <img src="/Image/pfp.jpg" alt="default profile" />
+                  <img
+                    src="/Image/pfp.jpg"
+                    alt="default profile"
+                    className="object-cover object-center w-[100%] h-[100%]"
+                  />
                 )}
               </div>
 
