@@ -13,11 +13,11 @@ function Courses() {
     <div>
       <Navbar />
       <ErrorBoundary>
-        <div className="flex w-full  p-2 lg:p-3 gap-4 lg:gap-8">
-          <div className="hidden md:flex w-[20%] min-h-screen">
+        <div className="flex w-full items-center p-2 lg:p-3 gap-4 lg:gap-8">
+          <div className="hidden md:flex md:w-[30%] lg:w-[20%] items-center min-h-screen">
             <CoursesCategories />
           </div>
-          <div className="flex w-[80%] min-h-screen">
+          <div className="flex  w-full md:w-[80%] min-h-screen ">
             <CourseCard />
           </div>
         </div>
