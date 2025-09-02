@@ -108,7 +108,7 @@ function Navbar() {
             </div>
           ) : (
             <div
-              className="pfp-wrapper"
+              className="flex w-5 h-full rounded-[100vw]"
               onMouseEnter={() => setIsOpen(true)}
               onMouseLeave={() => setIsOpen(false)}
             >
