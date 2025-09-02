@@ -66,7 +66,7 @@ function Navbar() {
         <NavLink to="/" className="flex   h-full">
           <div className="flex overflow-hidden ">
             <img
-              src="/logo.png"
+              src="/acadxlogo.png"
               className="object-cover object-center w-[100%] h-[100%]"
               alt="logo"
             />
