@@ -40,7 +40,7 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50 px-10 py-12 rounded-lg">
+    <div className="min-h-screen bg-gray-50 px-6 py-8 rounded-3xl">
       <h1 className="text-3xl font-bold text-gray-800 mb-8">Your Dashboard</h1>
 
       {loading ? (

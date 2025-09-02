@@ -1,0 +1,362 @@
+@import "./UIComponents/dropdown";
+@import "./UIComponents/buttons";
+@import "./FontSystem/Fonts";
+@import "./ColorSystem/MainColors";
+@import "./Animations/Animations";
+
+.navbar {
+  width: 96vw;
+  margin-inline: 0;
+  height: clamp(2.5rem, 4.5vw, 4.8vw);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Segoe UI", sans-serif;
+
+  &__left,
+  &__center,
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 2vw, 2rem);
+  }
+
+  &__left {
+    flex: 1;
+    width: 8vw;
+  }
+
+  &__center {
+    flex: 4;
+    width: 40vw;
+    justify-content: center;
+    overflow: hidden;
+
+    li {
+      margin-inline: 2vw;
+      display: flex;
+      float: left;
+    }
+  }
+
+  &__right {
+    flex: 1 1 0;
+    width: 40vw;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+}
+
+.ullist {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+#indevelopment {
+  text-decoration: none;
+  color: $grey2;
+  pointer-events: none;
+  &:hover {
+    transform: translateY(0);
+  }
+}
+
+.navlink {
+  display: block;
+  margin-bottom: 0.5vw;
+  padding: 0vw;
+  text-decoration: none;
+  color: $bg-dark1;
+  height: 3.5vw;
+  place-content: center center;
+  border: none;
+  font-size: clamp(0.8rem, 1.2vw, 1.4vw);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  @include transition(transform color, 0.25s);
+  transform-origin: top;
+
+  .underline {
+    opacity: 0;
+    display: none;
+  }
+
+  &:hover {
+    color: $accent2-dark;
+    transform: translateY(-0.3vw);
+  }
+
+  &.active {
+    color: $accent1;
+    font-weight: bold;
+
+    &:hover {
+      transform: translateY(0);
+    }
+
+    .underline {
+      display: block;
+      margin-top: 0.6vw;
+      opacity: 1;
+      height: 0.2vw;
+      width: 120%;
+      background-color: $accent1;
+    }
+  }
+}
+
+.left-container {
+  text-decoration: none;
+  @include transition;
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  &:hover {
+    transform: translateX(0.5vw);
+  }
+
+  &__logo {
+    height: clamp(1.8rem, 3.8vw, 5vw);
+    width: clamp(1.8rem, 3.8vw, 5vw);
+    margin: 0;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: 130%;
+    }
+  }
+
+  &__acad {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-family: "Heading", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1rem, 2vw, 2vw);
+    color: $bg-dark1;
+    opacity: 0.7;
+  }
+}
+
+.user-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-block: auto;
+  gap: 0.5vw;
+  font-size: clamp(0.6rem, 1.1vw, 1.2vw);
+  text-align: center;
+  font-family: "Content", sans-serif;
+
+  &__login,
+  &__signup {
+    width: clamp(2.8rem, 7vw, 9vw);
+    height: clamp(1.5rem, 3vw, 4vw);
+    display: block;
+    place-content: center;
+    padding-block: 0.1vw;
+    padding-inline: 0.2vw;
+    border-radius: 0.5rem;
+    text-decoration: none;
+  }
+
+  &__login {
+    background-color: $accent1-light;
+    @include transition;
+    color: #1a1a1a;
+
+    &:hover {
+      background-color: $highlight;
+    }
+  }
+
+  &__signup {
+    background-color: $accent1;
+    @include transition;
+    color: #fff;
+
+    &:hover {
+      background-color: $highlight;
+      color: #1a1a1a;
+    }
+  }
+}
+
+.search-bar {
+  height: 3vw;
+  display: flex;
+  align-items: center;
+  transition: border 0.3s ease;
+
+  input[type="text"] {
+    width: clamp(12rem, 20vw, 20vw);
+    height: clamp(1rem, 1vw, 3rem);
+    background-color: $grey1;
+    padding: clamp(0.1rem, 1.5vw, 1.6vw);
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    border-radius: 0.3rem;
+    border: 2px solid $grey1;
+    outline: none; // Remove default blue outline
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: #007bff; // or your $accent1
+    }
+  }
+
+  &__icon {
+    align-self: center;
+    height: 1.2vw;
+    margin-left: 1vw;
+    position: absolute;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &__button {
+    margin-left: 0.5vw;
+    border-radius: 0.5rem;
+    padding: 1vw 1.2vw;
+    background-color: #007bff; // or $accent1
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: "Content", sans-serif;
+    font-size: clamp(0.8rem, 1.2vw, 1.4vw);
+    font-weight: bold;
+    @include transition(transform background-color, 0.3s);
+
+    &:hover {
+      background-color: #0056b3; // darker shade
+      transform: scale(1.02);
+    }
+  }
+}
+
+.pfp-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 4.5vw;
+  height: 4.5vw;
+  cursor: pointer;
+}
+
+.pfp-icon {
+  display: flex;
+  overflow: hidden;
+  width: 80%;
+  height: 80%;
+  border-radius: 2rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.pfpdrop-container {
+  @include dropdown-container;
+}
+
+.pfpdrop {
+  @include dropdown;
+  color: white;
+  font-family: sans-serif;
+
+  &__content {
+    width: 0%;
+    white-space: nowrap;
+    transition: width 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+    &:hover {
+      width: 100%;
+    }
+  }
+}
+
+.logout {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 0;
+  justify-content: center;
+  border-radius: 1rem;
+  width: 100%;
+  height: 2rem;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  overflow: hidden;
+
+  &:hover #top {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  .box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    justify-content: center;
+    font-weight: bold;
+    position: absolute;
+    z-index: 3;
+  }
+
+  #top {
+    opacity: 0;
+    z-index: 1;
+    transform: scaleX(0);
+    background-color: $highlight;
+    transform-origin: left;
+    transition: opacity 0.2s ease-in-out, transform 0.4s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__center,
+  .user-buttons__signup {
+    display: none; // Hide main navbar sections
+  }
+
+  .navbar {
+    justify-content: space-between;
+    padding: 0 16px;
+    display: flex;
+  }
+
+  .mobile-menu-button {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: $bg-dark1;
+    cursor: pointer;
+  }
+
+  .mobile-dropdown {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  .mobile-dropdown a {
+    text-decoration: none;
+    color: $bg-dark1;
+    padding: 10px 0;
+  }
+}
