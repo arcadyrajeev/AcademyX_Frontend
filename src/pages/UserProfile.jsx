@@ -9,8 +9,8 @@ import "../Stylesheets/base.css";
 function UserProfile() {
   return (
     <div>
-      <div className="bodydiv">
-        <Navbar />
+      <Navbar />
+      <div className="flex gap-5">
         <UserOptions />
         <MainContent />
       </div>
