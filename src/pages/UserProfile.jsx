@@ -10,7 +10,7 @@ function UserProfile() {
   return (
     <div>
       <Navbar />
-      <div className="flex gap-5">
+      <div className="flex p-3  gap-5">
         <UserOptions />
         <MainContent />
       </div>
