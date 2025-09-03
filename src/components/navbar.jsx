@@ -88,17 +88,17 @@ function Navbar() {
           ))}
         </div>
 
-        <div className="flex h-full  ">
+        <div className="flex h-full items-center">
           {!isLoggedIn ? (
-            <div className="flex gap-2 h-full ">
+            <div className="flex gap-2 h-full items-center">
               <NavLink
-                className="flex w-24 h-full fontbody font-medium items-center justify-center rounded-md bg-accent1-light hover:bg-highlight duration-300 ease-in-out"
+                className="flex w-24 h-10 fontbody font-medium items-center justify-center rounded-md bg-accent1-light hover:bg-highlight duration-300 ease-in-out"
                 to="/login"
               >
                 Log in
               </NavLink>
               <NavLink
-                className="hidden md:flex w-24 h-full fontbody font-medium items-center justify-center rounded-md bg-accent1/70 hover:bg-highlight duration-300 ease-in-out"
+                className="hidden md:flex w-24 h-10 fontbody font-medium items-center justify-center rounded-md bg-accent1/70 hover:bg-highlight duration-300 ease-in-out"
                 to="/signup"
               >
                 Sign up
